@@ -8,5 +8,5 @@ import (
 func main() {
 	// Place your code here.
 	Otus := "Hello, OTUS!"
-	fmt.Println(stringutil.Reverse(Otus));
+	fmt.Println(stringutil.Reverse(Otus))
 }
