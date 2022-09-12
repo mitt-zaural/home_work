@@ -26,7 +26,7 @@ func Unpack(s string) (string, error) {
 			return "", ErrInvalidString // возвращаем пустую строку и строку описания ошибки
 		}
 		if i < strlen-1 { // индекс ещё в диапазоне строки?
-			var c1 string = s[i+1 : i+2]  // читаем следующий символ
+			c1 := s[i+1 : i+2] // читаем следующий символ
 			count, err = strconv.Atoi(c1) // следующий символ - это число?
 			if err == nil && count != 0 { // да, это ненулевое число
 				result += strings.Repeat(c, count-1)
