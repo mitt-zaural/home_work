@@ -11,7 +11,7 @@ var ErrInvalidString = errors.New("invalid string")
 func Unpack(s string) (string, error) {
 	var count int
 	var err error
-	var strlen = len(s)
+	strlen := len(s)
 
 	result := ""
 	for i := 0; i < strlen; i++ {
