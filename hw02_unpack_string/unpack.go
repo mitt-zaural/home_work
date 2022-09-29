@@ -9,7 +9,7 @@ import (
 var ErrInvalidString = errors.New("invalid string")
 
 func Unpack(s string) (string, error) {
-	var count int
+	var countX int
 	var err error
 	strlen := len(s)
 
@@ -17,7 +17,7 @@ func Unpack(s string) (string, error) {
 	for i := 0; i < strlen; i++ {
 		c := s[i : i+1] // выделяем символ из строки
 		if c != "\\" {
-			count, err = strconv.Atoi(c)
+			_, err = strconv.Atoi(c)
 		} else {
 			i++
 			err = ErrInvalidString
@@ -27,12 +27,12 @@ func Unpack(s string) (string, error) {
 		}
 		if i < strlen-1 { // индекс ещё в диапазоне строки?
 			c1 := s[i+1 : i+2]            // читаем следующий символ
-			count, err = strconv.Atoi(c1) // следующий символ - это число?
-			if err == nil && count != 0 { // да, это ненулевое число
-				result += strings.Repeat(c, count-1)
+			countX, err = strconv.Atoi(c1) // следующий символ - это число?
+			if err == nil && countX != 0 { // да, это ненулевое число
+				result += strings.Repeat(c, countX-1)
 				i++ // увеличим индекс, перескочим число
 			}
-			if err == nil && count == 0 { // это нулевое число
+			if err == nil && countX == 0 { // это нулевое число
 				i++ // увеличим индекс, перескочим число
 				c = ""
 			}
