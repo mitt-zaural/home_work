@@ -99,5 +99,4 @@ func TestRun(t *testing.T) {
 			return atomic.LoadInt32(&runTasksCount) == int32(tasksCount)
 		}, time.Duration(1000000), time.Duration(100), "tasks were run sequentially?")
 	})
-
 }
