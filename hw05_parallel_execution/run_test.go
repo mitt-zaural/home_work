@@ -79,7 +79,7 @@ func TestRun(t *testing.T) {
 			taskSleep := time.Millisecond * time.Duration(rand.Intn(100))
 			sumTime += taskSleep
 			
-			err := fmt.Errorf("error occured in task %d", i)
+			err := fmt.Errorf("error occurred in task %d", i)
 			
 			tasks = append(tasks, func() error {
 				time.Sleep(time.Millisecond * time.Duration(rand.Intn(100)))

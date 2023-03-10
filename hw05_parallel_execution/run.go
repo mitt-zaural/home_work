@@ -13,7 +13,7 @@ type Task func() error
 func Run(tasks []Task, n, m int) error {
 	// Place your code here.
 	var err error
-	var errCounter int = 0
+	var errCounter int
 
 	ch := make(chan Task)
 	mx := sync.Mutex{}
